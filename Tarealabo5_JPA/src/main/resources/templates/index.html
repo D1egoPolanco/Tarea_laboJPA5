@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingresar Alumno</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+
+<body>
+	<form th:action="@{insertarEstudiante}" th:object="${estudiante}"
+		method="post">
+
+		<div class="container">
+
+			<h1 class="text-center">INGRESAR ALUMNO</h1>
+			<div class="form-group ">
+				<label for="name">Nombre</label> <input type="text"
+					class="form-control" th:field="*{nombre}" id="name"
+					placeholder="Nombre Alumno" required>
+
+
+		
+			<div class="form-group row">
+				<label for="descripcion">Apellido</label> <input type="text"
+					class="form-control" th:field="*{apellido}" id="descripcion"
+					placeholder="Apellido" required> <span
+					th:errors="*{apellido}" style="color: #FF0000"></span><br>
+
+			</div>
+			<div class="form-group row">
+				<label for="precio" class="col-sm-2 col-form-label">Carnet</label> <input
+					type="text" class="form-control" th:field="*{carne}" id="precio"
+					placeholder="Ingrese numero de carné" required> <span
+					th:errors="*{carne}" style="color: #FF0000"></span><br>
+
+
+			</div>
+			<div class="form-group row">
+				<label for="vencimiento" class="col-sm-2 col-form-label">Carrera</label>
+
+				<input type="text" th:field="*{carrera}" class="form-control"
+					id="vencimiento" placeholder="Ingrese Carrera" required> <span
+					th:errors="*{carrera}" style="color: #FF0000"></span><br>
+			</div>
+
+			<button type="submit" class="class=btn btn-primary">Registrar
+				Estudiante</button>
+			<a class="btn btn-info" href="/lista">Mostrar Lista</a>
+		</div>
+</div>
+	</form>
+	<br>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
